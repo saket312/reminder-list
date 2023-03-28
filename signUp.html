@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="loginStyle.css">
+</head>
+
+<body>
+    <div class="log-form">
+        <h2>SignUp</h2>
+        <div class="form">
+            <input type="text" placeholder="username" id="signUpUsername" />
+            <input type="password" placeholder="password" id="signUpPassword" />
+            <button type="submit" class="btn" id="signUpBtn" onclick=signUp()>SignUp</button>
+        </div>
+        <a href="index.html">Existing User (Login)</a>
+    </div>
+    <script src="login.js"></script>
+    <script>
+        document.getElementById('signUpUsername').focus();
+        document.getElementById('signUpPassword').addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') signUp();
+        })
+    </script>
+</body>
+
+</html>

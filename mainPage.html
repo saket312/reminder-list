@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminders</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div id="usernameDisplay">Hello</div>
+        <button class="logoutBtn" onclick=logout()>LOGOUT</button>
+    </header>
+    <div class="container">
+        <h1>Reminders</h1>
+        <div class="inputArea">
+            <div class="input">
+                <input type="text" name="task" id="task" placeholder="Reminder" value="">
+                <button id="addButton" onclick=addItem()>Add<i class="fa fa-plus"></i> </button>
+                <button id="clrButton" onclick=clearAll()>Clear All</button>
+            </div>
+        </div>
+        <div class="list">
+            <div class="tableArea">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="col1">S.No.</th>
+                            <th class="col2 wideColumn">Reminder</th>
+                            <th class="col3">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="reminderPage.js"></script>
+    <script>
+        document.getElementById('task').focus();
+        document.getElementById('task').addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') addItem();
+        })
+    </script>
+</body>
+
+</html>
